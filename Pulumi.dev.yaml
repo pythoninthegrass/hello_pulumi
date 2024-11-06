@@ -1,0 +1,9 @@
+encryptionsalt: v1:z+vpAUeWnnM=:v1:cI/r3j5yWf6ZBL80:TjSw8cvZ4Rb5fOfMexj+6PAdou7JvQ==
+config:
+  hello_pulumi:frontendPort: "3001"
+  hello_pulumi:backendPort: "3000"
+  hello_pulumi:mongoPort: "27017"
+  hello_pulumi:mongoHost: mongodb://mongo:27017
+  hello_pulumi:database: cart
+  hello_pulumi:nodeEnvironment: development
+  hello_pulumi:protocol: http://

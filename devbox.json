@@ -1,0 +1,26 @@
+{
+  "packages": [
+    "asdf-vm@latest",
+    "git@latest",
+    "gnumake@latest",
+    "go-task@latest",
+    "uv@latest"
+  ],
+  "env": {
+    "VENV_DIR": ".venv",
+    "UV_HTTP_TIMEOUT": "150",
+    "PULUMI_CONFIG_PASSPHRASE_FILE": "$HOME/.pulumi/config_passphrase.txt"
+  },
+  "shell": {
+    "init_hook": [
+      ". $VENV_DIR/bin/activate",
+      "uv pip install -r requirements.txt"
+    ],
+    "scripts": {
+      "install": "uv pip install -r requirements.txt",
+      "export-reqs": "uv pip freeze | uv pip compile - -o requirements.txt",
+      "venv": "uv venv ${VENV_DIR} --allow-existing",
+      "test": "pytest"
+    }
+  }
+}
